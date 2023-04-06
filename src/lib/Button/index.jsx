@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import style from "./style.module.scss";
+import PropTypes from 'prop-types';
 
 export const AButton = ({ type, disabled, size, width, clickCb, children }) => {
   const handleClick = (event) => {
