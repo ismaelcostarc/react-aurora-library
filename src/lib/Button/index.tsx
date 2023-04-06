@@ -1,9 +1,20 @@
-import React, { useMemo } from "react";
+import * as React from "react";
 import style from "./style.module.scss";
-import PropTypes from 'prop-types';
 
-export const AButton = ({ type, disabled, size, width, clickCb, children }) => {
-  const handleClick = (event) => {
+export interface AButtonProps {
+  /**
+   * teste
+   */
+  type: string;
+  disabled: boolean;
+  size: string;
+  width: string;
+  clickCb?: () => void;
+  children: React.ReactNode;
+}
+
+export const AButton = ({ type, disabled, size, width, clickCb, children }: AButtonProps) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     clickCb && clickCb();
   };

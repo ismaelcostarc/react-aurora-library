@@ -12,13 +12,14 @@
     "react",
     "storybook"
   ],
-  "entryPoint": "./dist/my-lib.umd.cjs",
-  "main": "./dist/my-lib.umd.cjs",
-  "module": "./dist/my-lib.js",
+  "entryPoint": "./dist/react-aurora-library.umd.cjs",
+  "main": "./dist/react-aurora-library.umd.cjs",
+  "module": "./dist/react-aurora-library.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/my-lib.js",
-      "require": "./dist/my-lib.umd.cjs"
+      "import": "./dist/react-aurora-library.js",
+      "require": "./dist/react-aurora-library.umd.cjs"
     },
     "./dist/style.css": {
       "import": "./dist/style.css",
@@ -28,7 +29,7 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rm -rf dist",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "build:link": "yarn build && npm link",
     "build:publish": "yarn build && npm publish",
     "preview": "vite preview",
@@ -44,8 +45,10 @@
     "@storybook/react": "^7.0.2",
     "@storybook/react-vite": "^7.0.2",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.1.0",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-docgen": "^5.4.3",
     "react-dom": "^18.2.0",
@@ -53,7 +56,9 @@
     "standard-version": "^9.5.0",
     "storybook": "^7.0.2",
     "styled-components": "^5.3.9",
-    "vite": "^4.2.0"
+    "typescript": "^5.0.3",
+    "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",

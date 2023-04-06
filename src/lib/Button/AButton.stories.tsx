@@ -1,5 +1,7 @@
 
 import { AButton } from '.';
+import { Meta } from '@storybook/react';
+
 
 import styled from 'styled-components';
 
@@ -14,7 +16,7 @@ export default {
       },
     },
   },
-};
+} as Meta<typeof AButton>;
 
 const ComponentContainer = styled.div`
   padding: 3rem;
@@ -23,7 +25,14 @@ const ComponentContainer = styled.div`
   gap: 1rem; 
 `;
 
-export const Button= ({ type, size, disabled, width }) => (
+interface ButtonProps {
+  type: string;
+  disabled: boolean;
+  size: string;
+  width: string;
+}
+
+export const Button= ({ type, size, disabled, width }: ButtonProps) => (
   <ComponentContainer>
     <AButton
       size={size}
