@@ -38,8 +38,8 @@
     "storybook": "storybook dev -p 6006 --docs",
     "prebuild:storybook": "rm -rf storybook-static",
     "build:storybook": "storybook build --docs",
-    "predeploy:storybook": "yarn build:storybook",
-    "deploy:storybook": "gh-pages -d storybook-static"
+    "predeploy:storybook": "yarn build:storybook && touch ./storybook-static/.nojekyll",
+    "deploy:storybook": "gh-pages -d ./storybook-static -t true"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.2",
