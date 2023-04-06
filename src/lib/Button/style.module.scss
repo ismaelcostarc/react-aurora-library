@@ -1,0 +1,68 @@
+@import '../assets/css/colors.css';
+@import '../assets/css/reset.css';
+
+.button {
+  margin: 0 auto;
+  font-weight: bold;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 90%;
+  }
+
+  &--default {
+    background-color: var(--blue);
+    color: white;
+  }
+
+  &--warning {
+    background-color: var(--red);
+    color: white;
+  }
+
+  &--black {
+    background-color: black;
+    color: white;
+  }
+
+  &--outlined {
+    background: white;
+    color: black;
+    outline: 1px solid var(--dark-blue);
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+
+  &--disabled {
+    background-color: var(--grey);
+    cursor: not-allowed;
+  }
+
+  &--small {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  &--medium {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  &--large {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  &--children {
+  }
+
+  &--block {
+    width: 100%;
+  }
+}

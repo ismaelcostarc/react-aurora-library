@@ -1,2 +1,3 @@
-import { Button } from "./Button";
-export { Button };
+import { AButton } from "./Button";
+
+export { AButton };
